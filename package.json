@@ -18,8 +18,9 @@
     "morgan": "^1.10.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "node server.js"
   },
   "alias": {
     "pg-native": "./aliases/pg-native.js"
