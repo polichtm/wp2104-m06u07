@@ -6,6 +6,12 @@
   "dependencies": {
     "@azure/msal-browser": "^2.14.2",
     "@azure/msal-react": "^1.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.0",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "browserslist": "^4.16.6",
+    "next": "9.5.3",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "pg": "^8.6.0",
@@ -21,9 +27,6 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "node server.js"
-  },
-  "alias": {
-    "pg-native": "./aliases/pg-native.js"
   },
   "browserslist": {
     "production": [
