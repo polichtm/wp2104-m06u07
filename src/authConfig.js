@@ -12,8 +12,8 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const msalConfig = {
     auth: {
-        clientId: "468180be-6b95-4807-a994-c8199ba64da2",
-        authority: "https://login.microsoftonline.com/a6139514-41a5-4123-981a-ee7bb9e6a3b4",
+        clientId: "<client_ID>",
+        authority: "https://login.microsoftonline.com/<tenant_ID>",
         redirectUri: "http://localhost:3000"
     },
     cache: {
@@ -52,8 +52,7 @@ export const msalConfig = {
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
  */
 export const loginRequest = {
-//    scopes: ["User.Read"]
-    scopes: ["User.Read","https://ossrdbms-aad.database.windows.net/user_impersonation"]
+    scopes: ["User.Read"]
 };
 
 /**

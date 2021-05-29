@@ -7,13 +7,7 @@ import { callMsGraph } from "./graph";
 import Button from "react-bootstrap/Button";
 import "./styles/App.css";
 
-var accessToken = 'token';
-var username = 'adatumadmin1';
-var databasename = 'cnamtinventory';
-var servername = 'cnapostgresqldb';
-var tablename = 'inventory';
-
-const pg = require('pg');
+var accessToken = '';
 
 /**
  * Renders information about the signed-in user or a button to retrieve data about the user
@@ -29,10 +23,6 @@ const ProfileContent = () => {
             account: accounts[0]
         }).then((response) => {
             accessToken = response.accessToken;
-            process.env.PGPASSWORD = response.accessToken;
-            const connectionString =
-                `postgres://${username}@${servername}@${servername}.postgres.database.azure.com:5432/${databasename}?ssl=true`;
-            const client = new pg.Client(connectionString);
             callMsGraph(response.accessToken).then(response => setGraphData(response));
         });
     }
@@ -40,15 +30,12 @@ const ProfileContent = () => {
     return (
         <>
             <h5 className="card-title">Welcome {accounts[0].name}</h5>
-{/*
-            <h5 className="card-title">Welcome {accessToken}</h5>
- */}
             {graphData ? 
                 <ProfileData graphData={graphData} />
                 :
                 <Button variant="secondary" onClick={RequestProfileData}>Request Profile Information</Button>
             }
-            {accessToken}
+            <p>{accessToken}</p>
         </>
     );
 };
